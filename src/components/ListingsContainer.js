@@ -17,7 +17,7 @@ function ListingsContainer({ search }) {
     setListings(newListingArray)
   }
 
-  const filteredListings = listings.filter(listing => listing.description.includes(search))
+  const filteredListings = listings.filter(listing => listing.description.toLowerCase().includes(search.toLowerCase()))
 
   const listingCard = filteredListings.map((listing) => {
     return <ListingCard
